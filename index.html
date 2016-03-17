@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ScratchPad</title>
+
+  <!-- Style sheets -->
+  <style>
+    .container {
+      display: block;
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    #output {
+      display: block;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      background-color: #dedede;
+      text-align: center;
+      line-height: 50px;
+      font-weight: 600;
+      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    }
+    
+    button {
+      -webkit-appearance: none;
+      outline: 0;
+      border: 1px solid #dedede;
+      padding: 10px 40px;
+      background-color: transparent;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: background-color .2s linear;
+      cursor: pointer;
+      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    }
+    
+    button:hover {
+      background-color: #dedede;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+ <div id="output"></div>
+ <button>Count Me</button>
+ </div>
+ 
+ <script type="text/javascript">
+  (function () {
+    'use strict';
+    
+    var   o = document.getElementById('output'),
+        btn = document.getElementsByTagName('button')[0],
+      count = 0;
+    
+      
+      var lsCount = localStorage.getItem('count');
+      count = lsCount === null ? 0 : lsCount;
+      o.innerHTML = count;
+      
+    function addMe() {
+      count++;
+      
+      o.innerHTML = count;
+      localStorage.setItem('count', count);
+    }
+    
+    btn.addEventListener("click", addMe);
+  }());
+  </script>
+</body>
+</html>
