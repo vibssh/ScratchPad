@@ -12,6 +12,11 @@
 
   <!-- Style sheets -->
   <style>
+    
+    html {
+      overflow: hidden;
+      overflow-y: scroll;
+    }
     .container {
       display: block;
       width: 100%;
@@ -20,7 +25,6 @@
     }
     
     #output {
-      position: relative;
       display: inline-block;
       width: 50px;
       height: 50px;
@@ -36,7 +40,6 @@
     
     button {
       display: inline-block;
-      position: relative;
     }
     /*
     button {
@@ -100,12 +103,14 @@
   <section>
     <div class="container">
       <h3>Like us please</h3>
-      <div id="output"></div>
+      <div id="output">
+        <span></span>
+      </div>
       <button class="icobutton icobutton--thumbs-up"><span class="fa fa-thumbs-up"></span></button>
     </div>
   </section>
 
-   <script src="mo.min.js"></script>
+ <script src="mo.min.js"></script>
   <script src="app.js"></script>
 </body>
 
